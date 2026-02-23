@@ -1,6 +1,6 @@
-# Tree Combination + Primal-Dual Routing
+# Tree Construction + Primal-Dual Routing
 
-This repository contains a single-script runner `Tree_combination_Primal_Dual.py`.
+This repository contains a single-script runner `Tree_construction_Primal_Dual.py`.
 It supports multiple datasets and routing methods, and automatically generates:
 - a `plot_output/` folder
 - result CSV files
