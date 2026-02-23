@@ -7,16 +7,19 @@ It supports multiple datasets and routing methods, and automatically generates:
 
 
 # Environment
-## Option 1: Conda
-conda env create -f environment.yml
-conda activate pd-routing
+Option 1: Conda
 
-## Option 2: pip
-pip install -r requirements.txt
+    conda env create -f environment.yml
+    conda activate pd-routing
+
+Option 2: pip
+
+    pip install -r requirements.txt
 
 
 # Inputs
 Required arguments (all runs):
+
     --dataset_input: one of
         uniform_distribution_data,
         GMM_data,
@@ -32,6 +35,7 @@ Required arguments (all runs):
 
 
 Dataset-specific required arguments:
+
     uniform_distribution_data requires:
         --st_pair_size_input, --depot_size_input, --level_size_input, --seed_value_list_input
 
@@ -47,6 +51,7 @@ Dataset-specific required arguments:
 
 
 Routing_method-specific required arguments:
+
     PD_DFS, PD_Greedy, PD_DGreedy requires: 
         --use_constant_mst: 0 (disable) or 1 (enable)
         --mst_multiplier: 0 if disabled, otherwise a positive integer (e.g., 7)
@@ -55,6 +60,7 @@ Routing_method-specific required arguments:
 # Output
 
 After each run, the script creates:
+
     plot_output/ (figures)
     CSV result files (saved by the script)
 
@@ -62,6 +68,7 @@ After each run, the script creates:
 # Examples
 
 uniform_distribution_data + PD_DFS:
+
     python Tree_combination_Primal_Dual.py \
     --dataset_input uniform_distribution_data \
     --routing_method PD_DFS \
@@ -73,6 +80,7 @@ uniform_distribution_data + PD_DFS:
 
 
 GMM_data + PD_DFS:
+
     python Tree_combination_Primal_Dual.py \
     --dataset_input GMM_data \
     --routing_method PD_DFS \
@@ -85,6 +93,7 @@ GMM_data + PD_DFS:
     --GMM_sigma_input 5
 
 worst_instance_greedy + PD_DFS:
+
     python Tree_combination_Primal_Dual.py \
     --dataset_input worst_instance_greedy \
     --routing_method PD_DFS \
@@ -92,6 +101,7 @@ worst_instance_greedy + PD_DFS:
     --st_pair_size_input 1000
 
 meituan_dataset_weekday + PD_DGreedy:
+
     python Tree_combination_Primal_Dual.py \
     --dataset_input meituan_dataset_weekday \
     --routing_method PD_DGreedy \
@@ -99,8 +109,8 @@ meituan_dataset_weekday + PD_DGreedy:
     --depot_size_input 120 \
     --level_size_input 3
 
-
 uniform_distribution_data + Greedy_baseline:
+
     python Tree_combination_Primal_Dual.py \
     --dataset_input uniform_distribution_data \
     --routing_method Greedy_baseline \
@@ -112,5 +122,5 @@ uniform_distribution_data + Greedy_baseline:
 
 # Notes
 
-Please run commands from the repository root.
-The script writes outputs to plot_output/ and CSV files as implemented in the script
+    Please run commands from the repository root.
+    The script writes outputs to plot_output/ and CSV files as implemented in the script
