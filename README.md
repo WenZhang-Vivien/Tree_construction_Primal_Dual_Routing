@@ -61,7 +61,7 @@ Routing_method-specific required arguments:
 
 After each run, the script creates:
 
-    plot_output/ (figures)
+    plot_output/ 
     CSV result files (saved by the script)
 
 
